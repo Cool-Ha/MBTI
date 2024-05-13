@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
                 val intent = Intent(context, INTJDESC::class.java)
                 context.startActivity(intent)
             }) {
-                Text(text = "ISTP")
+                Text(text = "INTJ")
             }
         }
     }
