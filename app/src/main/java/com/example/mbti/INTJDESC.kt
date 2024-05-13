@@ -1,5 +1,6 @@
 package com.example.mbti
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -43,11 +44,11 @@ class INTJDESC : ComponentActivity() {
             Text(text = "INTJ")
             Text(text = "용의주도한 전략가")
 
-//            val conetext = LocalContext.current
+            val activity = LocalContext.current as? Activity
             Button(onClick = {
 //                val intent = Intent(context, SubActivity::class.java)
 //                context.startActivity(intent)
-                finish()
+                activity?.finish()
             }) {
                 Text(text = "닫기")
             }

@@ -29,32 +29,52 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun MainScreen() {
-        val context = LocalContext.current
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceEvenly,
             modifier = Modifier.fillMaxWidth().fillMaxHeight()
         ) {
-            Button(onClick = {
-                val intent = Intent(context, ISTJDESC::class.java)
-                context.startActivity(intent)
-            }) {
-                Text(text = "ISTJ")
-            }
+            MbtiButton(ISTJDESC::class.java, "ISTJ")
+            MbtiButton(ISFJDESC::class.java, "ISFJ")
+            MbtiButton(INTJDESC::class.java, "INTJ")
 
-            Button(onClick = {
-                val intent = Intent(context, ISFJDESC::class.java)
-                context.startActivity(intent)
-            }) {
-                Text(text = "ISFJ")
-            }
+//            val context = LocalContext.current
+//            Button(onClick = {
+//                val intent = Intent(context, ISTJDESC::class.java)
+//                context.startActivity(intent)
+//            }) {
+//                Text(text = "ISTJ")
+//            }
+//            Button(onClick = {
+//                val intent = Intent(context, ISFJDESC::class.java)
+//                context.startActivity(intent)
+//            }) {
+//                Text(text = "ISFJ")
+//            }
+//
+//            Button(onClick = {
+//                val intent = Intent(context, INTJDESC::class.java)
+//                context.startActivity(intent)
+//            }) {
+//                Text(text = "INTJ")
+//            }
+        }
+    }
 
-            Button(onClick = {
-                val intent = Intent(context, INTJDESC::class.java)
-                context.startActivity(intent)
-            }) {
-                Text(text = "INTJ")
-            }
+    @Composable
+    private fun MbtiButton(
+        java: Class<*>,
+        text: String
+    ) {
+        val context = LocalContext.current
+        Button(onClick = {
+            val intent = Intent(context, java)
+            intent.putExtra("seungsu", 132)
+            intent.putExtra("ai", "this is ai")
+            intent.putExtra("intel", text)
+            context.startActivity(intent)
+        }) {
+            Text(text = text)
         }
     }
 

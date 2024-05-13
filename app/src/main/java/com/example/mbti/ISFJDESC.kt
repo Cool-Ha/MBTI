@@ -1,5 +1,7 @@
 package com.example.mbti
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.mbti.ui.theme.MBTITheme
@@ -26,6 +29,7 @@ class ISFJDESC : ComponentActivity() {
                 MainScreen()
             }
         }
+
     }
 
 
@@ -39,9 +43,14 @@ class ISFJDESC : ComponentActivity() {
 
     @Composable
     fun MainScreen() {
+//        val activity = LocalContext.current as? Activity
+        val aa = intent.getStringExtra("ai")
+
         Column(horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceEvenly,
-            modifier = Modifier.fillMaxWidth().fillMaxHeight()) {
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight()) {
             Image(
                 painter = painterResource(id = R.drawable.isfj_image),
                 contentDescription = null
@@ -53,6 +62,7 @@ class ISFJDESC : ComponentActivity() {
             }) {
                 Text(text = "닫기")
             }
+            Text(text = "$aa")
         }
     }
 }
