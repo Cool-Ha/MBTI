@@ -48,6 +48,11 @@ class ISFJDESC : ComponentActivity() {
             )
             Text(text = "ISFJ")
             Text(text = "용감한 수호자")
+            Button(onClick = {
+                finish()
+            }) {
+                Text(text = "닫기")
+            }
         }
     }
 }

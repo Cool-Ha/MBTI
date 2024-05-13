@@ -50,6 +50,11 @@ class ISTJDESC : ComponentActivity() {
             )
             Text(text = "ISTJ")
             Text(text = "청렴결백한 논리주의자")
+            Button(onClick = {
+                finish()
+            }) {
+                Text(text = "닫기")
+            }
         }
     }
 }
