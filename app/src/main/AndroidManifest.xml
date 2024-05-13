@@ -24,9 +24,9 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".SubActivity"
+        <activity android:name=".ISTJDESC"
             />
-        <activity android:name=".LastActivity"
+        <activity android:name=".ISFJDESC"
             />
 
     </application>
