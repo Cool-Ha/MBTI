@@ -28,6 +28,8 @@
             />
         <activity android:name=".ISFJDESC"
             />
+        <activity android:name=".INTJDESC"
+            />
 
     </application>
 

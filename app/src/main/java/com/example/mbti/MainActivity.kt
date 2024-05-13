@@ -4,11 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.mbti.ui.theme.MBTITheme
 
 class MainActivity : ComponentActivity() {
@@ -16,23 +19,44 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MBTITheme {
-                MainScreen(string = "ISTJ")
-                MainScreen(string = "ISFJ")
-                MainScreen(string = "ISTP")
+                MainScreen()
             }
         }
     }
 
     @Composable
-    fun MainScreen(string: String) {
+    fun MainScreen() {
         val context = LocalContext.current
-        Column {
+        Column (horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceEvenly){
             Button(onClick = {
                 val intent = Intent(context, ISTJDESC::class.java)
                 context.startActivity(intent)
             }) {
-                Text(text = string)
+                Text(text = "ISTJ")
             }
+
+            Button(onClick = {
+                val intent = Intent(context, ISFJDESC::class.java)
+                context.startActivity(intent)
+            }) {
+                Text(text = "ISFJ")
+            }
+
+            Button(onClick = {
+                val intent = Intent(context, INTJDESC::class.java)
+                context.startActivity(intent)
+            }) {
+                Text(text = "ISTP")
+            }
+        }
+    }
+
+    @Preview(showBackground = true)
+    @Composable
+    fun JustPreview() {
+        MBTITheme {
+            MainScreen()
         }
     }
 }
