@@ -11,18 +11,18 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.platform.LocalContext
 import com.example.mbti.ui.theme.MBTITheme
 
-class SubActivity : ComponentActivity() {
+class LastActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MBTITheme {
                 Column {
-                    val context = LocalContext.current as? Activity
+//                    val context = LocalContext.current as? Activity
                     Button(onClick = {
-                        val intent = Intent(context, LastActivity::class.java)
-                        context?.startActivity(intent)
+                        //                        context?.finish()
+                        finish()
                     }) {
-                        Text(text = "이동")
+                        Text(text = "닫기")
                     }
                 }
             }
