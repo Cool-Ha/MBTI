@@ -69,7 +69,7 @@ class MainActivity : ComponentActivity() {
         val context = LocalContext.current
         Button(onClick = {
             val intent = Intent(context, java)
-            intent.putExtra("seungsu", 132)
+            intent.putExtra("sss", 132)
             intent.putExtra("ai", "this is ai")
             intent.putExtra("intel", text)
             context.startActivity(intent)
